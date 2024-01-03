@@ -1,0 +1,22 @@
+// THEME COLORS
+$primary-color:  #FF6060;
+$primary-color-gradient : linear-gradient(to top, darken($primary-color,50%) 0% , $primary-color 100%); 
+$background: #f6f6f6 !default;
+
+$text-color: white !default;
+
+
+// TYPOGRAPHY
+$fontSize: 18px !default;
+
+// BREACKPOINTS
+// !! Attention modifier uniquement les valeurs !!
+// La mixin "media(nom du breackpoint)" permet d'inclure 
+// @media (min-width:$valeur) {}
+$breakpoints: (
+  sm-mobile: 320px,
+  md-mobile: 576px,
+  tablet: 820px,
+  desktop: 1200px,
+  large-desktop: 1400px,
+);

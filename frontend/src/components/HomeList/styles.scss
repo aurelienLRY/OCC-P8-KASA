@@ -1,0 +1,30 @@
+@use "../../assets/sass/abstracts/variables" as color;
+
+.home-list {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+
+  border-radius: 25px;
+  background: color.$background;
+}
+
+.cardHome {
+  display: flex;
+  align-items: flex-end;
+
+  width: 340px;
+  height: 340px;
+  flex-shrink: 0;
+
+  border-radius: 10px;
+  background: color.$primary-color-gradient ;
+  & .card-title {
+    padding:20px
+  }
+}

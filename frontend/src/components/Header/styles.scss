@@ -1,0 +1,37 @@
+@use "../../assets/sass/abstracts/variables" as color;
+
+.header {
+  width: 100%;
+  max-width: 1240px;
+  padding: 0.5em;
+
+  display: flex;
+  justify-content: space-between;
+
+  &-logo {
+    color: color.$primary-color;
+    max-height: 68px;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 57px;
+  }
+  
+  a {
+    color: color.$primary-color;
+    text-decoration: none;
+    border-bottom: none;
+    padding-bottom: 0.2em;
+    transition: all 350ms ease-in-out;
+
+    &:hover {
+      border-bottom: 2px solid color.$primary-color;
+    }
+
+    &.active {
+      border-bottom: 2px solid color.$primary-color;
+    }
+  }
+}
