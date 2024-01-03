@@ -5,7 +5,7 @@ import ImgBanner from '../../assets/img/aboutBanner.jpeg'
 export default function AboutPage() {
   return (
     <main>
-      <Banner url={ImgBanner} title="" />
+      <Banner url={ImgBanner}  />
       <div>A propos</div>
     </main>
   )

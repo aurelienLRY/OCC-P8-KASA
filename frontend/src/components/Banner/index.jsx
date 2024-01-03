@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import './styles.scss'
 
 export default function Banner({ url, title, ...props}){
@@ -9,3 +10,13 @@ export default function Banner({ url, title, ...props}){
         </div>
     )
 } 
+
+
+Banner.propTypes = {
+url : PropTypes.string.isRequired,
+title: PropTypes.string
+}
+
+Banner.defaultProps = {
+title: ''
+}
