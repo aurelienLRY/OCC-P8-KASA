@@ -1,0 +1,11 @@
+@use "../../assets/sass/abstracts/variables" as color;
+
+.star-filled{
+    color: color.$primary-color;
+
+}
+
+.star-empty{
+
+  color : color.$background ;
+}

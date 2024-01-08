@@ -1,0 +1,174 @@
+@use "../../assets/sass/abstracts/variables" as var;
+@use "../../assets/sass/abstracts/mixins" as mix;
+
+.main-property {
+  max-width: 1240px;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+
+  @include mix.media(tablet) {
+    box-sizing: border-box;
+    gap: 15px;
+    padding: 0px 20px 0px 20px;
+  }
+
+  .property {
+    &-content {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      //flex-direction: column;
+
+      @include mix.media(tablet) {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+
+    &-header {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      @include mix.media(tablet) {
+        gap: 6px;
+      }
+    }
+    &-title {
+      color: var.$primary-color;
+      font-size: 36px;
+      margin-bottom: 0px;
+
+      @include mix.media(tablet) {
+        font-size: 18px;
+      }
+    }
+
+    &-location {
+      color: var.$primary-color;
+      font-size: 18px;
+
+      @include mix.media(tablet) {
+        font-size: 14px;
+      }
+    }
+
+    &-tags {
+      display: flex;
+      gap: 10px;
+    }
+
+    &-avatar {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 21px;
+      @include mix.media(tablet) {
+        justify-content: space-between;
+      }
+      .ant-avatar {
+        width: 64px;
+        height: 64px;
+
+        @include mix.media(tablet) {
+          width: 32px;
+          height: 32px;
+        }
+      }
+      @include mix.media(tablet) {
+        flex-direction: row-reverse;
+      }
+
+      &-info {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 10px;
+        font-size: 18px;
+        text-align: right;
+        span {
+          display: flex;
+          max-width: 120px;
+          color: var.$primary-color;
+
+          @include mix.media(tablet) {
+            max-width: 80px;
+          }
+        }
+      }
+    }
+
+    &-star-rating {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: nowrap;
+
+      @include mix.media(tablet) {
+        width: 50%;
+        justify-content: start;
+        gap: 5px;
+      }
+    }
+
+    &-collapse {
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+  }
+}
+
+.ant-collapse {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 76px;
+  border: none !important;
+  background: none !important;
+
+  @include mix.media(tablet) {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &-item {
+    width: 100%;
+
+
+    border-radius: 5px !important;
+    border-bottom: none !important;
+  }
+  &-header{
+align-items: center !important;
+
+  @include mix.media(tablet) {
+   padding: 5px 10px 5px 10px !important;
+  }
+  }
+  &-header,
+  &-expand-icon {
+    border-radius: 5px !important;
+    background: var.$primary-color;
+    color: white;
+  }
+
+  &-content-box {
+    margin: 0px !important;
+    border-radius: 5px !important;
+    background-color: var.$background;
+    p {
+      color: var.$primary-color;
+    }
+    ul {
+      color: var.$primary-color;
+      list-style-type: none;
+    }
+  }
+}
