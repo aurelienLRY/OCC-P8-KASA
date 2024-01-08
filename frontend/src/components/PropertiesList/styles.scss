@@ -1,0 +1,72 @@
+@use "../../assets/sass/abstracts/variables" as color;
+@use "../../assets/sass/abstracts/mixins" as mix;
+
+.home-list {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+
+  border-radius: 25px;
+  background: color.$background;
+
+  @include mix.media(md-mobile) {
+    gap: 20px;
+    background: none;
+    padding: 0px 20px 0px 20px;
+  }
+}
+
+.cardHome {
+  text-decoration: none;
+  transform: scale(1);
+  transition: all 200ms ease-in-out;
+
+  &-content {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+
+    width: 340px;
+    max-width: 90vw;
+    height: 340px;
+    flex-shrink: 0;
+
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(255, 255, 255, 0) 40%
+      ); /* Gradient noir */
+      z-index: 1;
+    }
+    @include mix.media(md-mobile) {
+    height: 255px;
+    }
+  }
+
+  & .card-title {
+    z-index: 2;
+    font-size: 18px;
+    padding: 20px;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}

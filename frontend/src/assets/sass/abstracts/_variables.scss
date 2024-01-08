@@ -7,7 +7,7 @@ $text-color: white !default;
 
 
 // TYPOGRAPHY
-$fontSize: 18px !default;
+$fontSize: 24px !default;
 
 // BREACKPOINTS
 // !! Attention modifier uniquement les valeurs !!
@@ -16,7 +16,7 @@ $fontSize: 18px !default;
 $breakpoints: (
   sm-mobile: 320px,
   md-mobile: 576px,
-  tablet: 820px,
+  tablet: 1024px,
   desktop: 1200px,
   large-desktop: 1400px,
 );

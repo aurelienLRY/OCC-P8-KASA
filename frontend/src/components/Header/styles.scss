@@ -1,9 +1,11 @@
 @use "../../assets/sass/abstracts/variables" as color;
+@use "../../assets/sass/abstracts/mixins" as mix;
 
 .header {
+  box-sizing: border-box;
   width: 100%;
   max-width: 1240px;
-  padding: 0.5em;
+  margin-top: 45px;
 
   display: flex;
   justify-content: space-between;
@@ -18,7 +20,7 @@
     align-items: center;
     gap: 57px;
   }
-  
+
   a {
     color: color.$primary-color;
     text-decoration: none;
@@ -32,6 +34,21 @@
 
     &.active {
       border-bottom: 2px solid color.$primary-color;
+    }
+  }
+
+  @include mix.media(tablet) {
+    margin-top: 20px;
+    padding: 0px 20px 0px 20px;
+    
+    &-logo {
+      max-width: 40vw;
+      max-height: 46px;
+      margin-right: 20px;
+    }
+
+    nav {
+      gap: 26px;
     }
   }
 }
