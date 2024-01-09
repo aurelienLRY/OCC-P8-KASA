@@ -6,16 +6,19 @@ import { dataHome } from '../../assets/datas/dataHome.js';
 //components tiers
 import { UpOutlined, UserOutlined } from '@ant-design/icons';
 import { Collapse, Avatar } from 'antd';
+import {motion} from 'framer-motion'
 // components
 import Tag from '../../components/Tag';
 import StarRating from '../../components/StarRating'; // Renommez le composant StarFilled en StarRating
 import CustomCarousel from '../../components/CustomCarousel';
+import { useAnimatePage } from '../../utils/context/AnimateContext';
 
 
 export default function PropertyPage() {
   const { id } = useParams();
   const listHome = dataHome;
   const property = listHome.find((item) => item.identifiant === id);
+  const animateData = useAnimatePage()
 
   if (!property) {
     console.log('Property not found');
@@ -23,7 +26,10 @@ export default function PropertyPage() {
   }
 
   return (
-    <main className='main-property'>
+    <motion.main className='main-property'
+    intial={animateData.intial}
+    animate={animateData.animate}
+    exit={animateData.exit}>
       <CustomCarousel photos={property['des photos']} />
 
       <div className='property-content'>
@@ -71,6 +77,6 @@ export default function PropertyPage() {
         />
       </div>
 
-    </main>
+    </motion.main>
   );
 }

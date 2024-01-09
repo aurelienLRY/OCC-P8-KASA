@@ -3,6 +3,9 @@ import PropertiesList from '../../components/PropertiesList';
 import Banner from '../../components/Banner';
 import ImgBanner from '../../assets/img/homeBanner.jpeg'
 import './styles.scss'
+import { motion } from 'framer-motion'
+
+import { useAnimatePage } from '../../utils/context/AnimateContext';
 
 
 
@@ -11,13 +14,18 @@ import './styles.scss'
  * @return {JSX.Element} The home page of the website.
  */
 export default function HomePage() {
+  const animateData = useAnimatePage()
   return (
-    <main className='main-home'>
+    <motion.main className='main-home'
+    intial={animateData.intial}
+    animate={animateData.animate}
+    exit={animateData.exit}
+    >
       <Banner url={ImgBanner} title="Chez vous, partout et ailleurs" />
       <section className="propertylist">
         <PropertiesList /> 
       </section>
      
-    </main>
+    </motion.main>
   );
 }
