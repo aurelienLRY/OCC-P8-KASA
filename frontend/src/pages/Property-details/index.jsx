@@ -1,28 +1,30 @@
 import React from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import './styles.scss';
+//data
 import { dataHome } from '../../assets/datas/dataHome.js';
+//components tiers
 import { UpOutlined, UserOutlined } from '@ant-design/icons';
 import { Collapse, Avatar } from 'antd';
+// components
 import Tag from '../../components/Tag';
 import StarRating from '../../components/StarRating'; // Renommez le composant StarFilled en StarRating
-import CarouselItem from '../../components/Carousel';
+import CustomCarousel from '../../components/CustomCarousel';
 
 
 export default function PropertyPage() {
   const { id } = useParams();
   const listHome = dataHome;
-
   const property = listHome.find((item) => item.identifiant === id);
 
   if (!property) {
     console.log('Property not found');
-    return <Navigate to="/Property-not-found" />; // Retournez quelque chose de significatif, par exemple, null
+    return <Navigate to="/Property-not-found" />; 
   }
 
   return (
     <main className='main-property'>
-      <CarouselItem photos={property['des photos']} />
+      <CustomCarousel photos={property['des photos']} />
 
       <div className='property-content'>
 

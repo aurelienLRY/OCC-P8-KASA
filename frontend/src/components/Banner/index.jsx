@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import './styles.scss'
 
+
+
 export default function Banner({ url, title, ...props}){
     return (
         <div className="banner">

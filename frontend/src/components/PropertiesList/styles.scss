@@ -1,27 +1,9 @@
 @use "../../assets/sass/abstracts/variables" as color;
 @use "../../assets/sass/abstracts/mixins" as mix;
 
-.home-list {
-  box-sizing: border-box;
-  width: 100%;
-  padding: 50px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 50px;
 
-  border-radius: 25px;
-  background: color.$background;
 
-  @include mix.media(md-mobile) {
-    gap: 20px;
-    background: none;
-    padding: 0px 20px 0px 20px;
-  }
-}
-
-.cardHome {
+.property-card {
   text-decoration: none;
   transform: scale(1);
   transition: all 200ms ease-in-out;
@@ -60,7 +42,7 @@
     }
   }
 
-  & .card-title {
+  &-title {
     z-index: 2;
     font-size: 18px;
     padding: 20px;
