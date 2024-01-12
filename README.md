@@ -32,8 +32,7 @@ Le site web :
 Le projet prévois 60 heures et se déroulera du jeudi 7 décembre 2023 au mardi 2 janvier 2024 , soit sur une période de 1 mois.
 
 ### Temps de développement actuelle : 
-[![wakatime](https://wakatime.com/badge/user/dfdaf0d3-5ae8-4997-92c1-563d24f5d7d4/project/018b002e-00bc-40b7-958b-dd71736a9180.svg)](https://wakatime.com/badge/user/dfdaf0d3-5ae8-4997-92c1-563d24f5d7d4/project/018b002e-00bc-40b7-958b-dd71736a9180)
-
+[![wakatime](https://wakatime.com/badge/user/dfdaf0d3-5ae8-4997-92c1-563d24f5d7d4/project/018cc5f8-f14a-4bdc-9856-efd925db7791.svg)](https://wakatime.com/badge/user/dfdaf0d3-5ae8-4997-92c1-563d24f5d7d4/project/018cc5f8-f14a-4bdc-9856-efd925db7791)
 ## Soutenance 
 ### Présentation des livrables (15 minutes) 
 - Présentation des différentes pages, avec la navigation entre elles, et les interactions avec tous les éléments interactifs. 
