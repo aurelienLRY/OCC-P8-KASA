@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { dataHome } from '../../assets/datas/dataHome.js';
+import { propertiesData} from '../../assets/datas/dataHome.js';
 import './styles.scss';
 
 export default function PropertiesList() {
-  const properties = dataHome;
+  const properties = propertiesData;
 
   return (
     <>

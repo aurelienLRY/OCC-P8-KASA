@@ -80,5 +80,5 @@ export default function CustomCarousel({ photos }) {
 }
 
 CustomCarousel.propTypes = {
-  photos: PropTypes.object.isRequired
+  photos: PropTypes.array.isRequired
 }

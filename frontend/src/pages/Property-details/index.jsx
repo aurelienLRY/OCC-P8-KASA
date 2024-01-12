@@ -2,38 +2,39 @@ import React from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import './styles.scss';
 //data
-import { dataHome } from '../../assets/datas/dataHome.js';
+import { propertiesData } from '../../assets/datas/dataHome.js';
 //components tiers
-import { UpOutlined, UserOutlined } from '@ant-design/icons';
-import { Collapse, Avatar } from 'antd';
-import {motion} from 'framer-motion'
+import { UserOutlined } from '@ant-design/icons';
+import { Avatar } from 'antd';
+
 // components
 import Tag from '../../components/Tag';
 import StarRating from '../../components/StarRating'; // Renommez le composant StarFilled en StarRating
 import CustomCarousel from '../../components/CustomCarousel';
-import { useAnimatePage } from '../../utils/context/AnimateContext';
+import CustomCollapse from '../../components/CustomCollapse';
 
 
 export default function PropertyPage() {
-  const { id } = useParams();
-  const listHome = dataHome;
-  const property = listHome.find((item) => item.identifiant === id);
-  const animateData = useAnimatePage()
+  const { id } = useParams(); // use de react router dom pour récupérer les paramètres de l'url'
 
+  const propertyList = propertiesData;
+  const property = propertyList.find((item) => item.identifiant === id);
+
+
+  // Si l'id est inexistant on redirige vers noFoundPAge
   if (!property) {
     console.log('Property not found');
-    return <Navigate to="/Property-not-found" />; 
+    return <Navigate to="/Property-not-found" />;
   }
 
   return (
-    <motion.main className='main-property'
-    intial={animateData.intial}
-    animate={animateData.animate}
-    exit={animateData.exit}>
+    <main className='main-property'>
+
+      {/* carousel  */}
       <CustomCarousel photos={property['des photos']} />
 
+      {/* contenu */}
       <div className='property-content'>
-
         <div className='property-header'>
           <h2 className='property-title'>{property.title}</h2>
           <p className='property-location'>{property.location}</p>
@@ -46,37 +47,29 @@ export default function PropertyPage() {
         <div className='property-avatar'>
           <div className='property-avatar-info'>
             <span>{property.hôte.name || property.hôte.nom}</span>
-            <Avatar  icon={property.hôte.photo ? <img src={property.hôte.photo} alt="avatar" /> : <UserOutlined />} />
+            <Avatar icon={property.hôte.photo ? <img src={property.hôte.photo} alt="avatar" /> : <UserOutlined />} />
           </div>
           <StarRating notes={property.note} className='property-star-rating' />
         </div>
-
       </div>
+
+      {/* Collapse */}
       <div className='property-collapse'>
-        <Collapse
-          expandIconPosition='end'
-          expandIcon={({ isActive }) => <UpOutlined rotate={isActive ? 180 : 0} />}
-          items={[
-            {
-              key: '1',
-              label: 'Description',
-              children: <p>{property.description}</p>,
-            },
-            {
-              key: '2',
-              label: 'Équipements',
-              children: (
-                <ul>
-                  {property['équipements'].map((item, key) => (
-                    <li key={key}>{item}</li>
-                  ))}
-                </ul>
-              ),
-            },
-          ]}
-        />
+
+        <CustomCollapse title='Description'>
+          <p>{property.description}</p>
+        </CustomCollapse>
+        
+        <CustomCollapse title='Équipements'>
+          <ul>
+            {property['équipements'].map((item, key) => (
+              <li key={key}>{item}</li>
+            ))}
+          </ul>
+        </CustomCollapse>
+
       </div>
 
-    </motion.main>
+    </main>
   );
 }

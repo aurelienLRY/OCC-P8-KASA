@@ -1,4 +1,4 @@
-export const dataHome = [
+export const propertiesData = [
 	{
 		"identifiant": "c67ab8a7",
 		"title": "Appartement cosy",
