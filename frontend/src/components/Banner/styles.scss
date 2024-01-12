@@ -1,3 +1,5 @@
+@use "../../assets/sass/abstracts/mixins" as mix;
+
 .banner {
   width: 100%;
   position: relative;
@@ -6,7 +8,12 @@
   align-items: center;
 
   &-title {
+    font-size: 48px;
     position: absolute;
+
+    @include mix.media(tablet) {
+      font-size: 24px;
+    }
   }
 
   &-img {
@@ -16,5 +23,14 @@
     object-fit: cover;
     border-radius: 25px;
     filter: brightness(70%);
+
+    @include mix.media(tablet) {
+      height: 111px;
+    }
+  }
+  @include mix.media(tablet) {
+    box-sizing: border-box;
+    padding: 0px 10px 0px 10px;
+
   }
 }

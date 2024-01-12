@@ -1,0 +1,26 @@
+@use "../../assets/sass/abstracts/variables" as color;
+@use "../../assets/sass/abstracts/mixins" as mix;
+
+.tag-container{
+//width: 115px;
+height: 25px;
+background : color.$primary-color;
+color: white;
+border-radius: 10px;
+
+padding: 3px 22px 3px 22px;
+
+
+display: flex;
+justify-content:center;
+align-items: center;
+
+font-size: 14px;
+
+
+@include mix.media(tablet) {
+    height: 18px;
+    padding: 1px 12px 1px 12px;
+    font-size: 10px;
+  }
+}

@@ -1,0 +1,45 @@
+@use "../../assets/sass/abstracts/variables" as var;
+@use "../../assets/sass/abstracts/mixins" as mix;
+
+.main-nofound {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 139px;
+  margin-top: 139px;
+  margin-bottom: 139px;
+
+  h1 {
+    color: var.$primary-color !important;
+    text-align: center;
+    font-size: 288px;
+    font-weight: 700;
+  }
+
+  p {
+    color: var.$primary-color !important;
+    font-size: 36px;
+    text-align: center;
+  }
+
+  a {
+    color: var.$primary-color !important;
+    font-size: 18px;
+  }
+
+  @include mix.media(md-mobile) {
+    gap: 113px;
+    margin-top: 113px;
+    margin-bottom: 113px;
+    h1 {
+      font-size: 96px;
+    }
+    p {
+      font-size: 18px;
+    }
+    a {
+      font-size: 14px;
+    }
+  }
+}

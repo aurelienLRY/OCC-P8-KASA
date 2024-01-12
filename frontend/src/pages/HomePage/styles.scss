@@ -1,0 +1,36 @@
+@use "../../assets/sass/abstracts/variables" as var;
+@use "../../assets/sass/abstracts/mixins" as mix;
+
+.main-home {
+  max-width: 1240px;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+
+  @include mix.media(md-mobile) {
+    gap: 22px;
+  }
+}
+.propertylist {
+  
+  box-sizing: border-box;
+  width: 100%;
+  padding: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+
+  border-radius: 25px;
+  background: var.$background;
+
+  @include mix.media(md-mobile) {
+    gap: 20px;
+    background: none;
+    padding: 0px 20px 0px 20px;
+  }
+}
