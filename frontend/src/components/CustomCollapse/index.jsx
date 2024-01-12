@@ -1,6 +1,7 @@
 // File: CollapseComponent.jsx
 import React, { useState , useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
+import PropTypes from 'prop-types'
 import { UpOutlined } from '@ant-design/icons';
 import './styles.scss'
 export default function CustomCollapse({ title, children }) {
@@ -37,4 +38,12 @@ export default function CustomCollapse({ title, children }) {
 
         </div >
     )
+}
+
+
+CustomCollapse.propTypes = {
+    title: PropTypes.string.isRequired
+}
+CustomCollapse.defaultProps = {
+    title :'Oups, titre manquant'
 }

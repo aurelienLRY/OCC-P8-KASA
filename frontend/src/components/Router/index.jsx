@@ -1,6 +1,4 @@
 import React from 'react';
-
-
 // Pages
 import HomePage from '../../pages/HomePage';
 import AboutPage from '../../pages/About';
