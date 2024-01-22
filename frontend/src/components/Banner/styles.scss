@@ -4,16 +4,29 @@
   width: 100%;
   position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
+justify-content: center;
+
+  @include mix.media(md-mobile) {
+    justify-content: start;
+  }
 
   &-title {
+    box-sizing: border-box;
     font-size: 48px;
     position: absolute;
 
-    @include mix.media(tablet) {
+    @include mix.media(desktop) {
       font-size: 24px;
     }
+    @include mix.media(md-mobile) {
+      max-width: 70%;
+      padding-left: 16px;
+    }
+    @include mix.media(sm-mobile) {
+      max-width: 85%;
+    }
+
   }
 
   &-img {
@@ -21,16 +34,14 @@
     width: 100%;
     height: 223px;
     object-fit: cover;
+
     border-radius: 25px;
     filter: brightness(70%);
 
-    @include mix.media(tablet) {
+    @include mix.media(desktop) {
       height: 111px;
+      border-radius: 10px;
     }
   }
-  @include mix.media(tablet) {
-    box-sizing: border-box;
-    padding: 0px 10px 0px 10px;
 
-  }
 }

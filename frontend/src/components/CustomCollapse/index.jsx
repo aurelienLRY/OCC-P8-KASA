@@ -1,13 +1,13 @@
-// File: CollapseComponent.jsx
 import React, { useState , useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import PropTypes from 'prop-types'
 import { UpOutlined } from '@ant-design/icons';
 import './styles.scss'
+
+
+
 export default function CustomCollapse({ title, children }) {
-   
     const [isOpen, setIsOpen] = useState(false);
-    
     
     const handleToggle = () => {
         setIsOpen(!isOpen);

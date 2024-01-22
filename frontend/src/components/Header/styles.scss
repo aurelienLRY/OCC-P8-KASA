@@ -25,19 +25,18 @@
     color: color.$primary-color;
     text-decoration: none;
     border-bottom: none;
-    padding-bottom: 0.2em;
     transition: all 350ms ease-in-out;
 
     &:hover {
-      border-bottom: 2px solid color.$primary-color;
+      border-bottom: 1px solid color.$primary-color;
     }
 
     &.active {
-      border-bottom: 2px solid color.$primary-color;
+      border-bottom: 1px solid color.$primary-color;
     }
   }
 
-  @include mix.media(tablet) {
+  @include mix.media(desktop) {
     margin-top: 20px;
     padding: 0px 20px 0px 20px;
     

@@ -14,9 +14,9 @@ $fontSize: 24px !default;
 // La mixin "media(nom du breackpoint)" permet d'inclure 
 // @media (min-width:$valeur) {}
 $breakpoints: (
-  sm-mobile: 320px,
+  sm-mobile: 374px,
   md-mobile: 576px,
-  tablet: 1024px,
+  tablet: 768px,
   desktop: 1200px,
   large-desktop: 1400px,
 );

@@ -3,9 +3,15 @@ import { Link } from 'react-router-dom';
 import { propertiesData} from '../../assets/datas/dataHome.js';
 import './styles.scss';
 
-export default function PropertiesList() {
-  const properties = propertiesData;
+/**
+ * Renders a list of properties as cards with links to their details pages.
+ *
+ * @returns {JSX.Element} The list of properties as cards.
+ */
 
+
+export default function PropertiesList() {
+ const properties = propertiesData;
   return (
     <>
       {properties.map((item) => (
@@ -16,6 +22,5 @@ export default function PropertiesList() {
         </Link>
       ))}
       </>
-      );
+    );
 }
-
